@@ -39,6 +39,10 @@ jobs:
         with:
           key: ${{ matrix.target }}
 
+      - name: Install zig (Linux cross-compile)
+        if: contains(matrix.target, 'linux')
+        uses: goto-bus-stop/setup-zig@v2
+
       - name: Install cargo-zigbuild (Linux cross-compile)
         if: contains(matrix.target, 'linux')
         run: |
@@ -57,10 +61,11 @@ jobs:
         shell: bash
         run: |
           mkdir -p dist
+          VERSION="${GITHUB_REF_NAME//\//-}"
           if [[ "${{ matrix.target }}" == *"windows"* ]]; then
-            cp "target/${{ matrix.target }}/release/codegraph.exe" "dist/codegraph-${{ matrix.target }}.exe"
+            cp "target/${{ matrix.target }}/release/codegraph.exe" "dist/codegraph-${VERSION}-${{ matrix.target }}.exe"
           else
-            cp "target/${{ matrix.target }}/release/codegraph" "dist/codegraph-${{ matrix.target }}"
+            cp "target/${{ matrix.target }}/release/codegraph" "dist/codegraph-${VERSION}-${{ matrix.target }}"
           fi
 
       - name: Upload artifact
