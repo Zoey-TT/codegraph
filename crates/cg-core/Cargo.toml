@@ -19,6 +19,7 @@ rayon = { workspace = true }
 petgraph = { workspace = true }
 sha2 = "0.10"
 git2 = { workspace = true }
+openssl = { workspace = true }
 
 [dev-dependencies]
 insta = { workspace = true }

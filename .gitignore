@@ -3,6 +3,9 @@
 **/*.rs.bk
 **/*.rsbk
 
+# Release packages
+/releases
+
 # CodeGraph index data
 .codegraph/
 
