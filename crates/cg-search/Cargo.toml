@@ -1,0 +1,22 @@
+[package]
+name = "cg-search"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+description = "Hybrid search: full-text, vector, and RRF fusion"
+
+[dependencies]
+cg-common = { workspace = true }
+cg-core = { workspace = true }
+cg-graph = { workspace = true }
+
+tantivy = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+rayon = { workspace = true }
+
+[dev-dependencies]
+insta = { workspace = true }
+criterion = { workspace = true }

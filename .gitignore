@@ -1,0 +1,33 @@
+# Rust build artifacts
+/target
+**/*.rs.bk
+**/*.rsbk
+
+# CodeGraph index data
+.codegraph/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+.env.local
+
+# Logs
+*.log
+
+# Test artifacts
+/coverage
+*.profraw
+
+# Temporary files
+/tmp
+*.tmp

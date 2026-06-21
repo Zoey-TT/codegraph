@@ -1,0 +1,90 @@
+[workspace]
+members = [
+    "crates/cg-common",
+    "crates/cg-core",
+    "crates/cg-parser",
+    "crates/cg-graph",
+    "crates/cg-search",
+    "crates/cg-mcp",
+    "crates/cg-cli",
+    "crates/cg-server",
+]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/your-org/codegraph"
+
+[workspace.dependencies]
+# Async runtime
+tokio = { version = "1.44", features = ["full"] }
+
+# Parallelism
+rayon = "1.10"
+
+# CLI
+clap = { version = "4.5", features = ["derive"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Concurrency containers
+dashmap = "6.1"
+
+# Hashing
+rustc-hash = "2.1"
+
+# Error handling
+thiserror = "2.0"
+anyhow = "1.0"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Progress bars
+indicatif = "0.17"
+
+# HTTP server
+axum = "0.8"
+
+# Git operations
+git2 = "0.20"
+
+# Graph data structures
+petgraph = "0.7"
+
+# File ignoring (ripgrep core)
+ignore = "0.4"
+
+# Tree-sitter
+tree-sitter = "0.25"
+
+# Testing
+insta = "1.42"
+criterion = { version = "0.5", features = ["html_reports"] }
+assert_cmd = "2.0"
+predicates = "3.1"
+tempfile = "3.14"
+tower = { version = "0.5", features = ["util"] }
+
+# Tantivy search
+tantivy = "0.24"
+
+# MCP
+rmcp = { version = "0.1", features = ["server", "transport-io"] }
+
+# JSON Schema
+schemars = "0.8"
+
+# Shared internal crates
+cg-common = { path = "crates/cg-common" }
+cg-core = { path = "crates/cg-core" }
+cg-parser = { path = "crates/cg-parser" }
+cg-graph = { path = "crates/cg-graph" }
+cg-search = { path = "crates/cg-search" }
+cg-mcp = { path = "crates/cg-mcp" }
+cg-server = { path = "crates/cg-server" }
